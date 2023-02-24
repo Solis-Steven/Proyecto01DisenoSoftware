@@ -4,8 +4,11 @@ import {
     Route,
     Navigate
 } from 'react-router-dom';
+import { RoutesProtector } from '../components';
 import { UserAuth } from '../context/AuthContext';
 import { Home, Login } from '../pages';
+import { Character } from '../pages/Character';
+import ErrorPage from '../pages/ErrorPage';
 
 
 export function MyRoutes() {
@@ -14,7 +17,6 @@ export function MyRoutes() {
     const RequireAuth = ({ children }) => {
         return user ? children : <Navigate to={"/login"} />;
     }
-
     return(
         <BrowserRouter>
             <Routes>
@@ -22,6 +24,10 @@ export function MyRoutes() {
                     <Home/>
                 </RequireAuth>} />
                 <Route path='login' element={<Login/>} />
+                <Route path='character' element={<RoutesProtector>
+                    <Character/>
+                </RoutesProtector>} />
+                <Route path='*' element={<ErrorPage />} />
             </Routes>
         </BrowserRouter>
     );

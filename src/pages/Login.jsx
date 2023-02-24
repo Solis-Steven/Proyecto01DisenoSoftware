@@ -1,12 +1,12 @@
 import { useEffect } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 
 export function Login() {
     const navigate = useNavigate();
     const { user, googleSignIn } = UserAuth();
 
-    const logIn = async() => {
+    const onLogIn = async() => {
         try {
             await googleSignIn();
         } catch (error) {
@@ -24,7 +24,7 @@ export function Login() {
         <>
             <h1>Login</h1>
             <button 
-                onClick={ logIn }>
+                onClick={ onLogIn }>
                 Iniciar Sesion
             </button>
         </>
