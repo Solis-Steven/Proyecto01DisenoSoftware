@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { UserAuth } from "../context/AuthContext";
+import banner from '../assets/banner.png';
+
 
 export function Home() {
     const { user, logOut } = UserAuth();
@@ -17,6 +19,9 @@ export function Home() {
 
     return(
         <>
+            <div>
+                <img src=
+            </div>
             <h1>Home</h1>
             <button
                 onClick={ onLogOut }>
