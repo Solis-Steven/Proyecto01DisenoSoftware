@@ -4,10 +4,6 @@ const Card = () => {
   return (
     <div className='card h-screen'>
             <img src={banner} alt="banner-rick" className='w-full'/>
-
-            <h1 className='text-indigo-700 text-base'>
-                hola
-            </h1>
             {/* <div className="px-6 py-4"> */}
                 {/* <div className="font-bold text-xl mb-2">The Coldest Sunset</div>
                 <p className="text-gray-700 text-base">
