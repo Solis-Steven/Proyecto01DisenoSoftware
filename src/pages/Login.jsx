@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Card from "../components/Card";
 import { UserAuth } from "../context/AuthContext";
 
 export function Login() {
@@ -22,7 +23,10 @@ export function Login() {
     }, [ user ]);
     return(
         <>
-            <h1>Login</h1>
+            <div>
+                <Card />
+            </div>
+            <h1 className='caret-red-700'>Login</h1>
             <button 
                 onClick={ onLogIn }>
                 Iniciar Sesion
