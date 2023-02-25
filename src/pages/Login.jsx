@@ -26,7 +26,7 @@ export function Login() {
             <div>
                 <Card />
             </div>
-            <h1 className='caret-red-700'>Login</h1>
+            <h1 className="text-indigo-700">Login</h1>
             <button 
                 onClick={ onLogIn }>
                 Iniciar Sesion
