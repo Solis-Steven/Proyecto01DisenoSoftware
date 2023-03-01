@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Card from "../components/Card";
+import { CharacterCard } from "../components/CharacterCard";
 import { UserAuth } from "../context/AuthContext";
 
 export function Login() {
@@ -30,7 +31,7 @@ export function Login() {
             <button 
                 onClick={ onLogIn }>
                 Iniciar Sesion
-            </button>
+            </button>  
         </>
     );
 }
