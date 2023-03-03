@@ -7,7 +7,7 @@ import {
 
 import {
     GoogleAuthProvider,
-    signInWithPopup, 
+    signInWithRedirect, 
     signOut,
     onAuthStateChanged
 } from 'firebase/auth'
@@ -21,7 +21,7 @@ export const AuthContextProvider = ({ children }) => {
     const googleSignIn = () => {
         // To consume what google provides us
         const provider = new GoogleAuthProvider();
-        signInWithPopup( auth, provider );
+        signInWithRedirect( auth, provider );
     }
 
     const logOut = () => {

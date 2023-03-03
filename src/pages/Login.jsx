@@ -31,7 +31,7 @@ export function Login() {
             <button 
                 onClick={ onLogIn }>
                 Iniciar Sesion
-            </button>  
+            </button>
         </>
     );
 }
