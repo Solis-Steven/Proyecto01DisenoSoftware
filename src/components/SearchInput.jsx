@@ -1,32 +1,29 @@
-import { useFetchData } from "../hooks/useFetchData"
-import { getCharacters } from "../helpers/getCharacters"
 import { useState } from "react";
+import { fetchCharacters } from "../api/fetchCharacters";
 
-const SearchInput = ({handleCharacter}) => {
+
+const SearchInput = ({setCharacters}) => {
 
     const [ inputValue, setInputValue ] = useState("");
-    const {data, isLoading} = useFetchData(inputValue, getCharacters);
+    const [ testValue, setTestValue ] = useState("");
+    // const {data, isLoading} = useFetchData(inputValue, getCharacters);
 
     const onInputChange = ({ target }) => {
 
         setInputValue( target.value );
+        console.log(target.value)
     }
 
-    const onSubmit = (event) => {
-        event.preventDefault();
-        const input = inputValue.trim(); 
+    const  onSubmit =  async(event) => {
+        event.preventDefault()
+        const url = `https://rickandmortyapi.com/api/character/?name=${ inputValue }&status=${testValue}`
+        const data = await fetchCharacters( url );
+        setCharacters(data)
+        setInputValue("")
+ 
 
-        if( input.length < 1 ) return;
-
-        console.log(input)
-
-        // handleResquest( input );
     }
 
-    const handleResquest = (value) => {
-        const isFetch = useFetchData(value, getCharacters)
-        console.log(isFetch)
-    }
 
 
 
@@ -37,7 +34,8 @@ const SearchInput = ({handleCharacter}) => {
                     className="w-60 py-2 px-4 rounded-lg bg-white text-gray-800 font-semibold shadow-md focus:outline-none focus:shadow-outline text-center "
                     type="text"
                     placeholder={`"Rick Sanchez"`}
-                    onChange={event => onInputChange(event)}/>
+                    onChange={event => onInputChange(event)}
+                    value={inputValue}/>
             </form>
         </div>
 

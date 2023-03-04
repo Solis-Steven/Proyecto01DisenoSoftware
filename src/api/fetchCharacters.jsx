@@ -1,6 +1,6 @@
 
-export async function fetchCharacters( currentPage ) {
-    const response = await fetch(`https://rickandmortyapi.com/api/character/?page=${ currentPage }`);
+export async function fetchCharacters( url ) {
+    const response = await fetch(url);
 
     if( !response.ok ) {
         throw new Error("Failed to fetch characters");
