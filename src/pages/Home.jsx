@@ -1,11 +1,18 @@
 import { useEffect } from "react";
+import { useState } from "react";
 import { UserAuth } from "../context/AuthContext";
 import mainBanner from "../assets/img/mainbanner.png";
 import SearchSection from "../components/SearchFilter";
+import SearchInput from "../components/SearchInput";
+
 
 export function Home() {
 
     const { user, logOut } = UserAuth();
+
+    const [characters, setCharacters] = useState([])
+
+
 
     //Log out function 
     const onLogOut = async () => {
@@ -16,10 +23,15 @@ export function Home() {
         }
     };
 
-     // Verify if the user has logged in from Authentication context
+    const handleCharacter = (value) => {
+        setCharacters({...characters, value})
+    }
+
+    // Verify if the user has logged in from Authentication context
     useEffect(() => {
         console.log(user);
     }, [user]);
+
 
     return (
         <>
@@ -29,13 +41,7 @@ export function Home() {
                 style={{ backgroundImage: `url(${mainBanner})` }}
             >
                 {/* Input searcher */}
-                <div className="flex flex-col justify-center items-center h-full">
-                    <input
-                        className="w-1/2 py-2 px-4 rounded-lg bg-white text-gray-800 font-semibold shadow-md focus:outline-none focus:shadow-outline text-center "
-                        type="text"
-                        placeholder={`"Rick Sanchez"`}
-                    />
-                </div>
+                <SearchInput handleCharacter={handleCharacter}></SearchInput>
                 {/* Log out button */}
                 <button
                     className="absolute top-0 right-0 bg-black rounded-lg btn-transparent text-white text-3xl py-4 px-4 mt-4 mr-4 bg-opacity-50 "
@@ -45,8 +51,7 @@ export function Home() {
                     Cerrar Sesion
                 </button>
             </div>
-            <SearchSection>
-            </SearchSection>
+            <SearchSection/>
 
             <h1>Home</h1>
         </>
