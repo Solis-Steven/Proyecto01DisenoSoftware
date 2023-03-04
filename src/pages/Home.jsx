@@ -4,7 +4,7 @@ import { CharacterCard } from "../components/CharacterCard";
 import { UserAuth } from "../context/AuthContext"; 
 import { fetchCharacters } from "../api/fetchCharacters";
 import mainBanner from "../assets/img/mainbanner.png";
-import SearchSection from "../components/SearchFilter";
+import SearchSection from "../components/SearchSection";
 import SearchInput from "../components/SearchInput";
 import { usePagination } from "../hooks/usePagination";
 import { Footer } from "../components/Footer";
@@ -19,14 +19,16 @@ const initialState = {
 export function Home() {
     const [ characters, setCharacters ] = useState([]);
 
-
     const { user, logOut } = UserAuth();
     //Informacion de los personajes
     const [ pagination, { nextPage, prevPage } ] = usePagination( initialState );
+
+    const [input, setInput] = useState('');
     
     useEffect(() => {
         const fetchData = async () => {
-            const data = await fetchCharacters( pagination.currentPage );
+            const url = `https://rickandmortyapi.com/api/character/?page=${ pagination.currentPage }`
+            const data = await fetchCharacters( url );
             setCharacters( data );
         }
         fetchData();
@@ -42,10 +44,6 @@ export function Home() {
         }
     };
 
-    const handleCharacter = (value) => {
-        setCharacters({...characters, value})
-    };
-
 
 
     return  (
@@ -56,7 +54,7 @@ export function Home() {
                 style={{ backgroundImage: `url(${mainBanner})` }}
             >
                 {/* Input searcher */}
-                <SearchInput handleCharacter={handleCharacter}></SearchInput>
+                <SearchInput setCharacters={setCharacters}></SearchInput>
                 {/* Log out button */}
                 <button
                     className="absolute top-0 right-0 bg-black rounded-lg btn-transparent text-white text-3xl py-4 px-4 mt-4 mr-4 bg-opacity-50 "
@@ -71,7 +69,7 @@ export function Home() {
 
             <main className="mb-5 bg-[#03154F]">
 
-                <SearchSection/>
+                <SearchSection />
                 <div className="grid bg-[#03154F] sm:grid-cols-0 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 auto-rows-min md:auto-rows-lg lg:auto-rows-xl justify-center items-center">
                     {
                         characters.map(character => (  
