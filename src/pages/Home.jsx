@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { fetchCharacters } from "../api/fetchCharacters";
 import { UserAuth } from "../context/AuthContext";
+import mainBanner from "../assets/img/mainbanner.png";
+import SearchSection from "../components/SearchFilter";
+import SearchInput from "../components/SearchInput";
+
 import { usePagination } from "../hooks/usePagination";
 
 const initialState = {
@@ -12,6 +16,7 @@ const initialState = {
 
 export function Home() {
     const [ characters, setCharacters ] = useState([]);
+
 
     const { user, logOut } = UserAuth();
     const [ pagination, { nextPage, prevPage } ] = usePagination( initialState );
@@ -26,7 +31,7 @@ export function Home() {
 
 
     //Log out function 
-    const onLogOut = async () => {
+    const onLogOut = async  () => {
         try {
             await logOut();
         } catch (error) {
@@ -34,43 +39,33 @@ export function Home() {
         }
     };
 
+    const handleCharacter = (value) => {
+        setCharacters({...characters, value})
+    };
 
-    useEffect(() => {
-        console.log(user);
-    }, [ user ]);
 
-    return (
+
+    return  (
         <>
-            <h1>Home</h1>
-            <button
-                onClick={ onLogOut }>
-                Cerrar Sesion
-            </button>
-
-            <div className="grid grid-cols-3">
-                {
-                    characters.map( character => (
-                        <li key={character.id}>{character.name}</li>
-                    ))
-                }
+            {/* Header of the main page*/}
+            <div
+                className="  w-full bg-cover bg-top  p-60"
+                style={{ backgroundImage: `url(${mainBanner})` }}
+            >
+                {/* Input searcher */}
+                <SearchInput handleCharacter={handleCharacter}></SearchInput>
+                {/* Log out button */}
+                <button
+                    className="absolute top-0 right-0 bg-black rounded-lg btn-transparent text-white text-3xl py-4 px-4 mt-4 mr-4 bg-opacity-50 "
+                    style={{ fontFamily: "Oswald, sans-serif" }}
+                    onClick={onLogOut}
+                >
+                    Cerrar Sesion
+                </button>
             </div>
+            <SearchSection/>
 
-            <button
-                onClick={ prevPage } 
-                className="font-bold text-lg mr-5 mt-5">
-                Previous page
-            </button>
-
-            <button 
-                onClick={ nextPage }
-                className="font-bold text-lg mt-5">
-                Next page
-            </button>
-
-            <p>Página actual: { pagination.currentPage }</p>
-            <p>Número máximo de elementos por página: 20</p>
-            <p>Total de páginas: 42</p>
-            
+            <h1>Home</h1>
         </>
     );
 }

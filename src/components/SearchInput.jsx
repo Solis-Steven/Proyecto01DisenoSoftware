@@ -5,7 +5,7 @@ import { useState } from "react";
 const SearchInput = ({handleCharacter}) => {
 
     const [ inputValue, setInputValue ] = useState("");
-    const {data, isLoading} = useFetchData(input, getCharacters);
+    const {data, isLoading} = useFetchData(inputValue, getCharacters);
 
     const onInputChange = ({ target }) => {
 
