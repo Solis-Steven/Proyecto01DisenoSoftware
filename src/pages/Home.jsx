@@ -9,8 +9,10 @@ const initialState = {
     total: 42
 }
 
+
 export function Home() {
     const [ characters, setCharacters ] = useState([]);
+
     const { user, logOut } = UserAuth();
     const [ pagination, { nextPage, prevPage } ] = usePagination( initialState );
     
@@ -22,15 +24,22 @@ export function Home() {
         fetchData();
     }, [pagination]);
 
-    const onLogOut = async() => {
+
+    //Log out function 
+    const onLogOut = async () => {
         try {
             await logOut();
         } catch (error) {
-            console.log( error );
+            console.log(error);
         }
-    }
+    };
 
-    return(
+
+    useEffect(() => {
+        console.log(user);
+    }, [ user ]);
+
+    return (
         <>
             <h1>Home</h1>
             <button
