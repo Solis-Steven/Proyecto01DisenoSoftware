@@ -43,7 +43,7 @@ export function Login() {
                 <h1 className="relative text-white text-left text-2xl font-bold"
                 > Rick and Morty        
                 </h1>
-                <div class="border-b"></div>
+                <div className="border-b"></div>
                 <h2 className="text-white"
                 >
                   Es una popular serie de televisión animada que sigue las 
@@ -52,14 +52,14 @@ export function Login() {
                 </h2>                             
               </div>
 
-              <div class="lg:grid lg:grid-cols-2 bg-my-color">  
-                <div class="col-span-1">  
+              <div className="lg:grid lg:grid-cols-2 bg-my-color">  
+                <div className="col-span-1">  
                   <div className="bg-my-color overflow-hidden sm:h-96 md:h-128 lg:h-160 lg:px-10 h-64">
                     <img src={rick} className="object-cover left-20 object-center px-20 py-16 h-full w-full sm:w-full md:w-full" />
                   </div>
 
                 </div>
-                <div class="col-span-1">
+                <div className="col-span-1">
                   <div className="bg-my-color overflow-hidden sm:h-96 md:h-128 lg:h-160 lg:py-12 px-20"
                     >
                     <h1 className="text-white text-justify text-xl tracking-widest">SOBRE LA SERIE</h1>
@@ -79,19 +79,19 @@ export function Login() {
 
               <div className="bg-center h-76 sm:h-96 md:h-128 lg:h-160 py-10 px-10"
                 >
-                <h1 class="font-bold text-left"
+                <h1 className="font-bold text-left"
                 >FRASES COMUNES DE LA SERIE</h1>
             
               <div className="lg:grid grid-cols-3 text-center px-20 py-12 space-y-5"
                 >
                   <div className="col-span-1">
                     <div
-                      class="block border border-black max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700">
-                      <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+                      className="block border border-black max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700">
+                      <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
                       "¡Estoy hecho polvo, tío!"
                       </p>
                       <h5
-                        class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+                        className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
                         - Rick Sánchez
                       </h5>
 
@@ -99,13 +99,13 @@ export function Login() {
                   </div>
                   <div className="col-span-1">
                     <div
-                      class="block border border-black max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700">
+                      className="block border border-black max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700">
                       
-                      <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+                      <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
                       "¡Pepinillo Rick!"
                       </p>
                       <h5
-                        class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+                        className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
                         - Rick Sánchez
                       </h5>
 
@@ -113,13 +113,13 @@ export function Login() {
                   </div>
                   <div className="col-span-1">
                     <div
-                      class="block border border-black max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700">
+                      className="block border border-black max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700">
                         
-                      <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+                      <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
                       "¡Que empiece el espectáculo!"
                       </p>
                       <h5
-                        class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+                        className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
                         - Rick y Morty
                       </h5>
                     </div>
