@@ -6,8 +6,8 @@ import { fetchCharacters } from "../api/fetchCharacters";
 import mainBanner from "../assets/img/mainbanner.png";
 import SearchSection from "../components/SearchFilter";
 import SearchInput from "../components/SearchInput";
-
 import { usePagination } from "../hooks/usePagination";
+import { Footer } from "../components/Footer";
 
 const initialState = {
     currentPage: 1,
@@ -21,6 +21,7 @@ export function Home() {
 
 
     const { user, logOut } = UserAuth();
+    //Informacion de los personajes
     const [ pagination, { nextPage, prevPage } ] = usePagination( initialState );
     
     useEffect(() => {
@@ -65,9 +66,48 @@ export function Home() {
                     Cerrar Sesion
                 </button>
             </div>
-            <SearchSection/>
 
-            <h1>Home</h1>
+            
+
+            <main className="mb-5 bg-[#03154F]">
+
+                <SearchSection/>
+                <div className="grid bg-[#03154F] sm:grid-cols-0 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 auto-rows-min md:auto-rows-lg lg:auto-rows-xl justify-center items-center">
+                    {
+                        characters.map(character => (  
+                            <CharacterCard 
+                                key={character.id}
+                                name={character.name}
+                                image={character.image}
+                                />
+                        ))
+                    }  
+                </div>
+                <div className="flex bg-[#03154F] text-white justify-evenly">
+                    <button className=""
+                    onClick={prevPage}
+                    >Previous page</button>
+                    <button className=""
+                    onClick={nextPage}
+                    >Next page</button>
+                </div>
+                <div className="bg-[#03154F] text-white text-center">
+                    <p>
+                        Pagina actual: {pagination.currentPage}
+                    </p> 
+                    <p>
+                        Maximo de elementos por pagina: {pagination.pageSize}
+                    </p> 
+                    <p>
+                        Total de paginas: {pagination.total}
+                    </p> 
+
+                </div>
+                     
+                
+            </main>
+            <Footer />
+                
         </>
     );
 }

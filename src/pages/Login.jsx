@@ -33,13 +33,13 @@ export function Login() {
             </div> 
               <div className="absolute top-4 right-4">
                 <button className="text-white border border-cyan-500 max-w-sm rounded-lg p-1"
-                  style={{fontFamily:"Oswald,sans-serif"}}
+                  
                         onClick={ onLogIn }>  
                         Iniciar Sesion
                 </button> 
             </div>
               <div className="absolute top-24 left-6"
-              style={{fontFamily:"Oswald,sans-serif"}}>
+              >
                 <h1 className="relative text-white text-left text-2xl font-bold"
                 > Rick and Morty        
                 </h1>
@@ -61,7 +61,7 @@ export function Login() {
                 </div>
                 <div class="col-span-1">
                   <div className="bg-my-color overflow-hidden sm:h-96 md:h-128 lg:h-160 lg:py-12 px-20"
-                    style={{fontFamily:"Oswald,sans-serif"}}>
+                    >
                     <h1 className="text-white text-justify text-xl tracking-widest">SOBRE LA SERIE</h1>
                     <p className="text-white text-sm md:text-base lg:text-lg">En esta serie, A lo largo de las temporadas, Rick y Morty se enfrentan a una variedad de amenazas y peligros, desde enemigos extraterrestres 
                       hasta versiones alternativas de sí mismos. También explora temas más profundos, como la depresión y la ansiedad.</p><br/>
@@ -78,12 +78,12 @@ export function Login() {
               </div>
 
               <div className="bg-center h-76 sm:h-96 md:h-128 lg:h-160 py-10 px-10"
-                style={{fontFamily:"Oswald,sans-serif"}}>
+                >
                 <h1 class="font-bold text-left"
                 >FRASES COMUNES DE LA SERIE</h1>
             
               <div className="lg:grid grid-cols-3 text-center px-20 py-12 space-y-5"
-                style={{fontFamily:"Oswald,sans-serif"}}>
+                >
                   <div className="col-span-1">
                     <div
                       class="block border border-black max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700">
