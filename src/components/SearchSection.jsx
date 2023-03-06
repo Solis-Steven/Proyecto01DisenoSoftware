@@ -3,9 +3,9 @@ import Select from "react-select";
 
 
 
-const GenderOptions = ['Male', 'Female', 'Genderless', 'Unknown']
-const SpecieOptions = ['Human', 'Alien', 'Unknown']
-const StatusOptions = ['Alive', 'Dead', 'Unknown'];
+const GenderOptions = ['Genero','Male', 'Female', 'Genderless', 'Unknown']
+const SpecieOptions = ['Especie','Human', 'Alien', 'Unknown']
+const StatusOptions = ['Estado','Alive', 'Dead', 'Unknown'];
 
 
 const SearchSection = () => {
@@ -14,7 +14,6 @@ const SearchSection = () => {
 
     const handleSelectChange = ({ value }) => {
         console.log(value);
-        console.log(selectedGender);
         setSelectedGender(value);
     }
 
@@ -24,17 +23,35 @@ const SearchSection = () => {
             <div className="flex items-center mx-auto">
             <Select className="w-auto p-2"
                 defaultValue={{ label: 'Estado', value: 'Empty' }}
-                options={StatusOptions.map(gen => ({ label: gen, value: gen }))}
+                options={StatusOptions.map(gen => {
+                    if (gen === 'Estado') {
+                       return { label: gen, value: "" }
+                    }
+                    return { label: gen, value: gen }
+                    
+                })}
                 onChange={handleSelectChange}
             />
             <Select className=" w-auto p-2"
                 defaultValue={{ label: 'Especie', value: 'Empty' }}
-                options={SpecieOptions.map(gen => ({ label: gen, value: gen }))}
+                options={SpecieOptions.map(gen => {
+                    if (gen === 'Especie') {
+                       return { label: gen, value: "" }
+                    }
+                    return { label: gen, value: gen }
+                    
+                })}
                 onChange={handleSelectChange}
             />
             <Select className="w-auto p-2"
                 defaultValue={{ label: 'Genero', value: 'Empty' }}
-                options={GenderOptions.map(gen => ({ label: gen, value: gen }))}
+                options={GenderOptions.map(gen => {
+                    if (gen === 'Genero') {
+                       return { label: gen, value: "" }
+                    }
+                    return { label: gen, value: gen }
+                    
+                })}
                 onChange={handleSelectChange}
             />
             </div>
