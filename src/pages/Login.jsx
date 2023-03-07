@@ -79,7 +79,7 @@ export function Login() {
 
               <div className="bg-center h-76 sm:h-96 md:h-128 lg:h-160 py-10 px-10"
                 >
-                <h1 class="font-bold text-left"
+                <h1 className="font-bold text-left"
                 >FRASES COMUNES DE LA SERIE</h1>
             
               <div className="lg:grid grid-cols-3 text-center px-20 py-12 space-y-5"
