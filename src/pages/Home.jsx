@@ -70,7 +70,7 @@ export function Home() {
             <main className="mb-5 bg-[#03154F]">
 
                 <SearchSection />
-                <div className="grid bg-[#03154F] sm:grid-cols-0 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 auto-rows-min md:auto-rows-lg lg:auto-rows-xl justify-center items-center">
+                <div className="grid 2xl:px-20 bg-[#03154F] sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4 w-full justify-items-center items-center">
                     {
                         characters.map(character => (  
                             <CharacterCard 
