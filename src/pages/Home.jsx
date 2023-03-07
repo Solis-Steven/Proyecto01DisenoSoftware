@@ -6,33 +6,40 @@ import { fetchCharacters } from "../api/fetchCharacters";
 import mainBanner from "../assets/img/mainbanner.png";
 import SearchSection from "../components/SearchSection";
 import SearchInput from "../components/SearchInput";
-import { usePagination } from "../hooks/usePagination";
 import { Footer } from "../components/Footer";
-
-const initialState = {
-    currentPage: 1,
-    pageSize: 20,
-    total: 42
-}
+import { Filtered } from "../context/FilterContext";
 
 
 export function Home() {
+    const { logOut } = UserAuth();
+    
+    // Characters information
     const [ characters, setCharacters ] = useState([]);
 
-    const { user, logOut } = UserAuth();
-    //Informacion de los personajes
-    const [ pagination, { nextPage, prevPage } ] = usePagination( initialState );
+    // Filtered data
+    const { filteredData,
+            filterName , 
+            filterStatus, 
+            filterSpecie, 
+            filterGender,
+            nextPage,
+            prevPage } = Filtered();
 
-    const [input, setInput] = useState('');
     
     useEffect(() => {
+        // Get filtered data
+        const { page, name, status, specie, gender } = filteredData;
         const fetchData = async () => {
-            const url = `https://rickandmortyapi.com/api/character/?page=${ pagination.currentPage }`
-            const data = await fetchCharacters( url );
-            setCharacters( data );
+            try {
+                const data = await fetchCharacters( page, name, status, specie, gender );
+                setCharacters( data );
+                console.log("Data", data);
+            } catch (error) {
+                setCharacters([]);
+            }
         }
         fetchData();
-    }, [pagination]);
+    }, [ filteredData ]);
 
 
     //Log out function 
@@ -54,7 +61,10 @@ export function Home() {
                 style={{ backgroundImage: `url(${mainBanner})` }}
             >
                 {/* Input searcher */}
-                <SearchInput setCharacters={setCharacters}></SearchInput>
+                <SearchInput 
+                    setCharacters={ setCharacters }
+                    filteredData={ filteredData }
+                    filterName={ filterName } />
                 {/* Log out button */}
                 <button
                     className="absolute top-0 right-0 bg-black rounded-lg btn-transparent text-white text-3xl py-4 px-4 mt-4 mr-4 bg-opacity-50 "
@@ -69,7 +79,10 @@ export function Home() {
 
             <main className="mb-5 bg-[#03154F]">
 
-                <SearchSection />
+                <SearchSection
+                    filterStatus={ filterStatus }
+                    filterSpecie={ filterSpecie }
+                    filterGender={ filterGender} />
                 <div className="grid 2xl:px-20 bg-[#03154F] sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4 w-full justify-items-center items-center">
                     {
                         characters.map(character => (  
@@ -90,7 +103,7 @@ export function Home() {
                     >Next page</button>
                 </div>
                 <div className="bg-[#03154F] text-white text-center">
-                    <p>
+                    {/* <p>
                         Pagina actual: {pagination.currentPage}
                     </p> 
                     <p>
@@ -98,7 +111,7 @@ export function Home() {
                     </p> 
                     <p>
                         Total de paginas: {pagination.total}
-                    </p> 
+                    </p>  */}
 
                 </div>
                      

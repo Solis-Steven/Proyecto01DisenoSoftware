@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Select from "react-select";
 
 
@@ -8,14 +7,7 @@ const SpecieOptions = ['Especie','Human', 'Alien', 'Unknown']
 const StatusOptions = ['Estado','Alive', 'Dead', 'Unknown'];
 
 
-const SearchSection = () => {
-
-    const [selectedGender, setSelectedGender] = useState('Masculino')
-
-    const handleSelectChange = ({ value }) => {
-        console.log(value);
-        setSelectedGender(value);
-    }
+const SearchSection = ({ filterStatus, filterSpecie, filterGender }) => {
 
     return (
 
@@ -30,7 +22,7 @@ const SearchSection = () => {
                     return { label: gen, value: gen }
                     
                 })}
-                onChange={handleSelectChange}
+                onChange={ filterStatus }
             />
             <Select className=" w-auto p-2"
                 defaultValue={{ label: 'Especie', value: 'Empty' }}
@@ -41,7 +33,7 @@ const SearchSection = () => {
                     return { label: gen, value: gen }
                     
                 })}
-                onChange={handleSelectChange}
+                onChange={ filterSpecie }
             />
             <Select className="w-auto p-2"
                 defaultValue={{ label: 'Genero', value: 'Empty' }}
@@ -52,7 +44,7 @@ const SearchSection = () => {
                     return { label: gen, value: gen }
                     
                 })}
-                onChange={handleSelectChange}
+                onChange={ filterGender }
             />
             </div>
             

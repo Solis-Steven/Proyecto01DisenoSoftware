@@ -2,22 +2,20 @@ import { useState } from "react";
 import { fetchCharacters } from "../api/fetchCharacters";
 
 
-const SearchInput = ({setCharacters}) => {
+const SearchInput = ({ setCharacters, filteredData, filterName }) => {
 
     const [ inputValue, setInputValue ] = useState("");
-    const [ testValue, setTestValue ] = useState("");
-    // const {data, isLoading} = useFetchData(inputValue, getCharacters);
 
     const onInputChange = ({ target }) => {
 
         setInputValue( target.value );
-        console.log(target.value)
     }
 
     const  onSubmit =  async(event) => {
         event.preventDefault()
-        const url = `https://rickandmortyapi.com/api/character/?name=${ inputValue }&status=${testValue}`
-        const data = await fetchCharacters( url );
+        filterName( inputValue );
+        const { name, status, specie, gender } = filteredData;
+        const data = await fetchCharacters( name, status, specie, gender );
         setCharacters(data)
         setInputValue("")
  
