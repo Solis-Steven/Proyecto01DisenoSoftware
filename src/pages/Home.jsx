@@ -23,7 +23,9 @@ export function Home() {
             filterSpecie, 
             filterGender,
             nextPage,
-            prevPage } = Filtered();
+            prevPage,
+            pageInfo,
+            setPageInfo } = Filtered();
 
     
     useEffect(() => {
@@ -32,10 +34,21 @@ export function Home() {
         const fetchData = async () => {
             try {
                 const data = await fetchCharacters( page, name, status, specie, gender );
-                setCharacters( data );
-                console.log("Data", data);
+                setCharacters( data.results );
+                const newPageInfo = {
+                    currentPage: page,
+                    max: 20,
+                    totalPages: data.info.pages
+                }
+                setPageInfo( newPageInfo );
             } catch (error) {
+                const newPageInfo = {
+                    currentPage: 0,
+                    max: 20,
+                    totalPages: 0
+                }
                 setCharacters([]);
+                setPageInfo( newPageInfo );
             }
         }
         fetchData();
@@ -95,23 +108,28 @@ export function Home() {
                     }  
                 </div>
                 <div className="flex bg-[#03154F] text-white justify-evenly">
-                    <button className=""
-                    onClick={prevPage}
-                    >Previous page</button>
-                    <button className=""
-                    onClick={nextPage}
-                    >Next page</button>
+                    <button 
+                        disabled={ filteredData.page === 1 }
+                        onClick={prevPage}>
+                        Previous page
+                    </button>
+
+                    <button 
+                        disabled={ filteredData.page === pageInfo.totalPages }
+                        onClick={nextPage}>
+                        Next page
+                    </button>
                 </div>
                 <div className="bg-[#03154F] text-white text-center">
-                    {/* <p>
-                        Pagina actual: {pagination.currentPage}
+                    <p>
+                        Pagina actual: { pageInfo.currentPage }
                     </p> 
                     <p>
-                        Maximo de elementos por pagina: {pagination.pageSize}
+                        Maximo de elementos por pagina: { pageInfo.max }
                     </p> 
                     <p>
-                        Total de paginas: {pagination.total}
-                    </p>  */}
+                        Total de paginas: { pageInfo.totalPages }
+                    </p> 
 
                 </div>
                      

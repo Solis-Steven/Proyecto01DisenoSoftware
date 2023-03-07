@@ -8,9 +8,16 @@ const initialState = {
     gender: ""
 }
 
+const initialPageInfo = {
+    currentPage: 1,
+    max: 20,
+    totalPages: 42
+}
+
 const FilterContext = createContext();
 export function FilterProvider({ children }) {
     const [ filteredData, setFilteredData] = useState( initialState );
+    const [ pageInfo, setPageInfo] = useState( initialPageInfo );
 
     const filterName = ( newName ) => {
         // Only change the name
@@ -66,7 +73,9 @@ export function FilterProvider({ children }) {
             filterSpecie,
             filterGender,
             nextPage,
-            prevPage
+            prevPage,
+            pageInfo,
+            setPageInfo
         }}>
             { children }
         </FilterContext.Provider>

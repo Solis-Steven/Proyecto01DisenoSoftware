@@ -15,11 +15,10 @@ const SearchInput = ({ setCharacters, filteredData, filterName }) => {
         event.preventDefault()
         filterName( inputValue );
         const { name, status, specie, gender } = filteredData;
+        console.log("Estoy");
         const data = await fetchCharacters( name, status, specie, gender );
-        setCharacters(data)
+        setCharacters( data.results )
         setInputValue("")
- 
-
     }
 
 
