@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import { fetchCharacters } from "../api/fetchCharacters";
 
 export function CharacterCard({idChar, name, image}) {
 
     //advancing to the characters page
     const navigate = useNavigate();
 
+    //get character information and advance to the character page
     const handleClick = async() => {
         console.log(idChar);
         const response = await fetch(`https://rickandmortyapi.com/api/character/${idChar}`);
@@ -13,7 +13,6 @@ export function CharacterCard({idChar, name, image}) {
             throw new Error("Failed to fetch characters");
         }
         const data = await response.json();
-        console.log(data);
         navigate('/character', {state: data});
     }
     return(
