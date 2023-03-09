@@ -3,6 +3,7 @@ import { Footer } from "../components/Footer";
 import EpisodeTable from "../components/EpisodeTable";
 import { useEffect, useState } from "react";
 import Divider from "../components/Divider";
+import { BsHouse, BsArrowRight, BsFlag } from 'react-icons/bs';
 
 export function Character() {
 
@@ -63,12 +64,24 @@ export function Character() {
                     <div className=" w-full overflow-hidden">
                         <Divider />
                     </div>
-                    <div className=" flex justify-between">
+                    <div className=" flex justify-between mb-6">
                         <p className="pt-14  text-3xl text-white font-bold">Género: <span className="font-thin">{character.gender}</span></p>
-                        <p className="pt-14  pl-9 text-3xl text-white font-bold">Tipo: <span className="font-thin">{character.type === "" ? 'No especificado': character.type}</span></p>
+                        <p className="pt-14  pl-9 text-3xl text-white font-bold">Tipo: <span className="font-thin">{character.type === "" ? 'No especificado' : character.type}</span></p>
+                    </div>
+                    <div className=" flex flex-wrap">
+                        <div className="flex">
+                        <BsHouse className="text-white font-bold text-4xl" />
+                        <p className="pl-2 text-3xl text-white font-bold">{character.origin.name}</p>
+                        </div>
+                        <BsArrowRight className="mx-5 text-white font-bold text-4xl justify-center" />
+                        <div className="flex">
+                            <BsFlag className="text-white font-bold text-3xl" />
+                            <p className="pl-2 text-3xl text-white font-bold">{character.location.name}</p>
+                        </div>
+
+
                     </div>
                 </div>
-
             </div>
             <div className="overflow-auto bg-[#0d0b52] pt-8">
                 <EpisodeTable
