@@ -2,7 +2,7 @@ const EpisodeTable = ({ episodes }) => {
 
 
     return (
-        <div>
+        <div className="overflow-auto rounded-lg shadow">
         <table className="w-full">
             <thead className="bg-slate-600 border-b-2 border-gray-600">
                 <tr>
