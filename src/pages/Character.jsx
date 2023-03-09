@@ -45,7 +45,7 @@ export function Character() {
 
     return (
         <>
-            <div className=" pt-8 px-9 flex flex-wrap bg-[#858585] pb-10 ">
+            <div className=" pt-8 px-9 flex flex-wrap bg-[#585858] pb-10 ">
                 <button
                     className="absolute top-0 right-0 bg-[#521069] rounded-lg btn-transparent text-white text-3xl py-4 px-4 mt-4 mr-4  "
                     style={{ fontFamily: "Oswald, sans-serif" }}
