@@ -2,7 +2,6 @@ const EpisodeTable = ({ episodes }) => {
 
 
     return (
-        <div className="overflow-auto rounded-lg shadow">
         <table className="w-full">
             <thead className="bg-slate-600 border-b-2 border-gray-600">
                 <tr>
@@ -13,7 +12,7 @@ const EpisodeTable = ({ episodes }) => {
             </thead>
             <tbody className="divide-y divide-black">
                 {episodes.map((episode, index) => (
-                    <tr key={index} className= "odd:bg-[#0d0b52]">
+                    <tr key={index} className= "odd:bg-[#0b0946]">
                         <td className="w-3 p-3 text-sm  text-gray-300 hover:text-white whitespace-nowrap"
                             onMouseEnter={(e) => {
                                 e.target.classList.add('border-b-2', 'border-white');
@@ -33,7 +32,6 @@ const EpisodeTable = ({ episodes }) => {
                 ))}
             </tbody>
         </table>
-        </div>
     );
 }
 
