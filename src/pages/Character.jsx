@@ -30,11 +30,15 @@ export function Character() {
                 });
                 const episodes = await Promise.all(episodePromises);
                 setEpisodesData(episodes);
+
+                console.log(episodesData)
+                
             } catch (error) {
                 console.error(error);
             }
         };
         fetchEpisodes();
+        
         window.scrollTo(0, 0);
     }, [character.episode]);
 
