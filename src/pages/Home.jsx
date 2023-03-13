@@ -8,6 +8,8 @@ import SearchSection from "../components/SearchSection";
 import SearchInput from "../components/SearchInput";
 import { Footer } from "../components/Footer";
 import { Filtered } from "../context/FilterContext";
+import Quiz from "../components/Quiz";
+import { QuizProvider } from "../context/QuizContext";
 
 
 export function Home() {
@@ -90,7 +92,7 @@ export function Home() {
 
 
 
-            <main className="mb-5 bg-[#03154F]">
+            <main className="pb-5 bg-[#03154F]">
 
                 <SearchSection
                     filterStatus={filterStatus}
@@ -136,6 +138,10 @@ export function Home() {
 
 
             </main>
+            <QuizProvider>
+                <Quiz />
+            </QuizProvider>
+
             <Footer />
 
         </>
