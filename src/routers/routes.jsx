@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import { RoutesProtector } from '../components';
 import { UserAuth } from '../context/AuthContext';
+import { FilterProvider } from '../context/FilterContext';
 import { Home, Login } from '../pages';
 import { Character } from '../pages/Character';
 import ErrorPage from '../pages/ErrorPage';
@@ -21,7 +22,9 @@ export function MyRoutes() {
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<RequireAuth>
-                    <Home/>
+                    <FilterProvider>
+                        <Home/>
+                    </FilterProvider>
                 </RequireAuth>} />
                 <Route path='login' element={<Login/>} />
                 <Route path='character' element={<RoutesProtector>
