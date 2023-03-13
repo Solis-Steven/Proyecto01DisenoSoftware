@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 function FetchImagen({ url }) {
-  const [imagen, setImagen] = useState(null);
+  const [imagen, setImagen] = useState([]);
 
   useEffect(() => {
     fetch(url)

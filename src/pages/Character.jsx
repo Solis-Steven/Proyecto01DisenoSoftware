@@ -12,12 +12,13 @@ export function Character() {
     const navigate = useNavigate();
 
     //Character Data
-    const character = location.state;
+    const [character, setCharacter] = useState(location.state);
 
     // Episode Data
     const [episodesData, setEpisodesData] = useState([]);
 
     useEffect(() => {
+
         const fetchEpisodes = async () => {
             try {
                 const episodePromises = character.episode.map(async (episodeUrl) => {
@@ -43,6 +44,7 @@ export function Character() {
     }, [character.episode]);
 
     const manageClick = () => {
+        
         navigate('/');
     }
 
@@ -89,7 +91,8 @@ export function Character() {
             </div>
             <div className="overflow-auto bg-[#0d0b52] pt-8">
                 <EpisodeTable
-                    episodes={episodesData} />
+                    episodes={episodesData}
+                    character={character} />
             </div>
             <Footer />
 

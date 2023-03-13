@@ -7,7 +7,6 @@ export function CharacterCard({idChar, name, image}) {
 
     //get character information and advance to the character page
     const handleClick = async() => {
-        console.log(idChar);
         const response = await fetch(`https://rickandmortyapi.com/api/character/${idChar}`);
         if( !response.ok ) {
             throw new Error("Failed to fetch characters");
