@@ -25,16 +25,13 @@ const EpisodeTable = ({ episodes, character }) => {
             <tbody className="divide-y divide-black">
                 {episodes.map((episode, index) => (
                     <tr key={index} className= "odd:bg-[#0b0946]">
-                        <button
+                        <td className="w-3 p-3 text-sm  text-gray-400 hover:text-white whitespace-nowrap cursor-pointer"
                         onClick={() => handleClick(episode.id)}
-                        >
-                        <td className="w-3 p-3 text-sm  text-gray-400 hover:text-white whitespace-nowrap"
                             onMouseEnter={(e) => {
                                 e.target.classList.add('border-b-2', 'border-white');
                             }} onMouseLeave={(e) => {
                                 e.target.classList.remove('border-b-2', 'border-white');
                             }}>{episode.episode}</td>
-                        </button>
                         <td className=" w-11 p-3 text-sm text-gray-400 hover:text-white relative whitespace-nowrap"
                         onMouseEnter={(e) => {
                             e.target.classList.add('border-b-2', 'border-white');
