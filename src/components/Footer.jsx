@@ -1,7 +1,6 @@
 export const Footer = () => {
   return (
-    <div className="lg:grid grid-cols-2 bg-my-color"
-    style={{fontFamily:"Oswald,sans-serif"}}>
+    <div className="lg:grid grid-cols-2 bg-my-color">
         <div className="col-span-1">
             <div className="bg-my-color bg-center h-66 sm:h-96 md:h-128 lg:h-160 px-24 py-20">
                 <h1 className="text-white px-10 py-16 text-3xl"

@@ -3,7 +3,7 @@ import { Carousel } from "../components/Carousel";
 import { CharacterCard } from "../components/CharacterCard";
 import { UserAuth } from "../context/AuthContext";
 import { fetchCharacters } from "../api/fetchCharacters";
-import mainBanner from "../assets/img/mainbanner.png";
+import mainBanner from "../assets/img/mainbanner.svg";
 import SearchSection from "../components/SearchSection";
 import SearchInput from "../components/SearchInput";
 import { Footer } from "../components/Footer";
@@ -72,7 +72,7 @@ export function Home() {
         <>
             {/* Header of the main page*/}
             <div
-                className="  w-full bg-cover bg-top  p-60"
+                className="  w-full bg-cover bg-center h-96 sm:h-72 md:h-128 p-60"
                 style={{ backgroundImage: `url(${mainBanner})` }}
             >
                 {/* Input searcher */}
@@ -91,8 +91,7 @@ export function Home() {
             </div>
 
 
-
-            <main className="pb-5 bg-[#03154F]">
+            <main className=" w-full pb-5 bg-[#03154F]">
 
                 <SearchSection
                     filterStatus={filterStatus}

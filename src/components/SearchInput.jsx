@@ -24,8 +24,8 @@ const SearchInput = ({ setCharacters, filteredData, filterName }) => {
 
 
     return (
-        <div className="flex flex-col justify-center items-center h-full">
-            <form onSubmit={ event => onSubmit(event)}>
+        <div className="flex justify-center items-center h-full sm:w-full">
+            <form className="" onSubmit={ event => onSubmit(event)}>
                 <input
                     className="w-60 py-2 px-4 rounded-lg bg-white text-gray-800 font-semibold shadow-md 
                     focus:outline-none focus:shadow-outline text-center"

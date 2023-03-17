@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import banner from '../assets/img/banner.png';
 import { CharacterCard } from "../components/CharacterCard";
 import { UserAuth } from "../context/AuthContext";
-import rick from '../assets/img/rick.png';
+import rick from '../assets/img/rick.svg';
 import { Footer } from "../components/Footer";
 
 export function Login() {
