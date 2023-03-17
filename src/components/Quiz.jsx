@@ -20,7 +20,7 @@ export const Quiz = () => {
 
                 : (
                     <div className="text-white flex flex-col items-center">
-                    <h3 className="max-w-2xl text-center mb-5 md:text-3xl">
+                    <h3 className="px-2 max-w-2xl text-center mb-5 md:text-3xl">
                     Pon  a prueba tus conocimientos sobe la serie de Rick and Morty mediante la siguiente trivia. ¡No esperes más!
                     </h3>
                     <button 

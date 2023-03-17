@@ -86,7 +86,6 @@ export function Home() {
                     Cerrar Sesion
                 </button>
             </div>
-
             <main className="pb-5 bg-[#03154F]">
 
                 <SearchSection
