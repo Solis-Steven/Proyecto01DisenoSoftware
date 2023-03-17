@@ -11,7 +11,7 @@ import { Home, Login } from '../pages';
 import { Character } from '../pages/Character';
 import ErrorPage from '../pages/ErrorPage';
 
-
+ 
 export function MyRoutes() {
     const { user } =  UserAuth();
 
@@ -21,13 +21,15 @@ export function MyRoutes() {
     return(
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<RequireAuth>
+                <Route path='/' element={
+                <RequireAuth>
                     <FilterProvider>
                         <Home/>
                     </FilterProvider>
                 </RequireAuth>} />
                 <Route path='login' element={<Login/>} />
-                <Route path='character' element={<RoutesProtector>
+                <Route path='character' element={
+                <RoutesProtector>
                     <Character/>
                 </RoutesProtector>} />
                 <Route path='*' element={<ErrorPage />} />
