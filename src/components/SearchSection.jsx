@@ -12,7 +12,7 @@ export const SearchSection = ({ filterStatus, filterSpecie, filterGender }) => {
     return (
 
         <div className="flex w-full bg-[#03154F] h-40">
-            <div className="flex items-center mx-auto">
+            <div className="flex flex-col md:flex-row items-center mx-auto">
             <Select className="w-auto p-2"
                 defaultValue={{ label: 'Estado', value: 'Empty' }}
                 options={StatusOptions.map(gen => {

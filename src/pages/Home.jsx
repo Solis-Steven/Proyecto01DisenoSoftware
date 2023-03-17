@@ -69,7 +69,7 @@ export function Home() {
         <>
             {/* Header of the main page*/}
             <div
-                className="  w-full bg-cover bg-top  p-60"
+                className='bg-cover bg-center h-64 sm:h-96 md:h-128 lg:h-160'
                 style={{ backgroundImage: `url(${mainBanner})` }}
             >
 
