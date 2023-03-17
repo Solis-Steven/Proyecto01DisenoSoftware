@@ -9,6 +9,7 @@ import { UserAuth } from '../context/AuthContext';
 import { FilterProvider } from '../context/FilterContext';
 import { Home, Login } from '../pages';
 import { Character } from '../pages/Character';
+import { Episode } from '../pages/Episode';
 import ErrorPage from '../pages/ErrorPage';
 
  
@@ -31,6 +32,9 @@ export function MyRoutes() {
                 <Route path='character' element={
                 <RoutesProtector>
                     <Character/>
+                </RoutesProtector>} />
+                <Route path='episode' element={<RoutesProtector>
+                    <Episode/>
                 </RoutesProtector>} />
                 <Route path='*' element={<ErrorPage />} />
             </Routes>
