@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { AiOutlineCloseSquare} from 'react-icons/ai';
-import Answer from "./Answer";
+import { Answer } from "./Answer";
 import { QuizContext } from "../context/QuizContext";
 
-const Question = ({setTrivia}) => {
+export const Question = ({setTrivia}) => {
   const [quizState, dispatch] = useContext(QuizContext);
   const currentQuestion = quizState.questions[quizState.currentQuestionIndex];
 
@@ -45,5 +45,3 @@ const Question = ({setTrivia}) => {
     </div>
   );
 };
-
-export default Question;

@@ -1,7 +1,6 @@
+import { useState, useEffect } from "react"; 
 import { useNavigate, useLocation } from "react-router-dom";
-import { Footer } from "../components/Footer";
-import { useState, useEffect } from "react";
-import CharactersTable from "../components/CharactersTable";
+import { Footer, CharactersTable } from "../components";
 
 export function Episode() {
     const location = useLocation();
@@ -9,8 +8,8 @@ export function Episode() {
 
     const [characters, setCharactersData] = useState([]);
 
-    const episode = location.state[0]; 
-    const character = location.state[1]; 
+    const episode = location.state[0];  // Episode information
+    const character = location.state[1]; // Previous character information
 
     useEffect(() => {
         const fechCharacter = async () => {
@@ -64,16 +63,13 @@ export function Episode() {
                         Volver
                     </button>
                 </div>
-                
-                {/* <CharacterTable
-                    episodes={characters} /> */}
             </div>
             <div className="overflow-auto bg-my-color pt-8">
                 <CharactersTable
                         characters={characters} />
             </div>
-            <Footer />
 
+            <Footer />
         </>
     );
 }

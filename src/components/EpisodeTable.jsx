@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-const EpisodeTable = ({ episodes, character }) => {
+export const EpisodeTable = ({ episodes, character }) => {
 
     const navigate = useNavigate();
 
@@ -47,5 +47,3 @@ const EpisodeTable = ({ episodes, character }) => {
         </table>
     );
 }
-
-export default EpisodeTable;

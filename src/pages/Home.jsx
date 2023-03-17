@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
-import { Carousel } from "../components/Carousel";
-import { CharacterCard } from "../components/CharacterCard";
 import { UserAuth } from "../context/AuthContext";
+import { 
+    CharacterCard,
+    SearchSection,
+    SearchInput,
+    Footer,
+    Quiz,
+    Pagination
+} from "../components";
 import { fetchCharacters } from "../api/fetchCharacters";
 import mainBanner from "../assets/img/mainbanner.png";
-import SearchSection from "../components/SearchSection";
-import SearchInput from "../components/SearchInput";
-import { Footer } from "../components/Footer";
 import { Filtered } from "../context/FilterContext";
-import Quiz from "../components/Quiz";
 import { QuizProvider } from "../context/QuizContext";
 
 
@@ -24,9 +26,6 @@ export function Home() {
         filterStatus,
         filterSpecie,
         filterGender,
-        nextPage,
-        prevPage,
-        pageInfo,
         setPageInfo } = Filtered();
 
 
@@ -66,8 +65,6 @@ export function Home() {
         }
     };
 
-
-
     return (
         <>
             {/* Header of the main page*/}
@@ -75,12 +72,12 @@ export function Home() {
                 className="  w-full bg-cover bg-top  p-60"
                 style={{ backgroundImage: `url(${mainBanner})` }}
             >
-                {/* Input searcher */}
+
                 <SearchInput
                     setCharacters={setCharacters}
                     filteredData={filteredData}
                     filterName={filterName} />
-                {/* Log out button */}
+
                 <button
                     className="absolute top-0 right-0 bg-black rounded-lg btn-transparent text-white text-3xl py-4 px-4 mt-4 mr-4 bg-opacity-50 "
                     style={{ fontFamily: "Oswald, sans-serif" }}
@@ -90,14 +87,13 @@ export function Home() {
                 </button>
             </div>
 
-
-
             <main className="pb-5 bg-[#03154F]">
 
                 <SearchSection
                     filterStatus={filterStatus}
                     filterSpecie={filterSpecie}
                     filterGender={filterGender} />
+
                 <div className="grid 2xl:px-20 bg-[#03154F] sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4 w-full justify-items-center items-center">
                     {
                         characters.map(character => (
@@ -110,34 +106,10 @@ export function Home() {
                         ))
                     }
                 </div>
-                <div className="flex bg-[#03154F] text-white justify-evenly">
-                    <button
-                        disabled={filteredData.page === 1}
-                        onClick={prevPage}>
-                        Previous page
-                    </button>
 
-                    <button
-                        disabled={filteredData.page === pageInfo.totalPages}
-                        onClick={nextPage}>
-                        Next page
-                    </button>
-                </div>
-                <div className="bg-[#03154F] text-white text-center">
-                    <p>
-                        Pagina actual: {pageInfo.currentPage}
-                    </p>
-                    <p>
-                        Maximo de elementos por pagina: {pageInfo.max}
-                    </p>
-                    <p>
-                        Total de paginas: {pageInfo.totalPages}
-                    </p>
-
-                </div>
-
-
+                <Pagination />
             </main>
+
             <QuizProvider>
                 <Quiz />
             </QuizProvider>

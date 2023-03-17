@@ -7,7 +7,7 @@ const SpecieOptions = ['Especie','Human', 'Alien', 'Unknown']
 const StatusOptions = ['Estado','Alive', 'Dead', 'Unknown'];
 
 
-const SearchSection = ({ filterStatus, filterSpecie, filterGender }) => {
+export const SearchSection = ({ filterStatus, filterSpecie, filterGender }) => {
 
     return (
 
@@ -51,8 +51,4 @@ const SearchSection = ({ filterStatus, filterSpecie, filterGender }) => {
         </div>
 
     );
-
-
 }
-
-export default SearchSection
