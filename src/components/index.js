@@ -1,2 +1,16 @@
 // This file allow us to order our exports
 export * from "./RoutesProtector"
+export * from "./Answer"
+export * from "./CharacterCard"
+export * from "./CharactersTable"
+export * from "./Divider"
+export * from "./EpisodeTable"
+export * from "./Footer"
+export * from "./HeaderInfo"
+export * from "./Pagination"
+export * from "./Question"
+export * from "./Quiz.jsx"
+export * from "./SearchInput"
+export * from "./SearchSection"
+export * from "./Trivia"
+

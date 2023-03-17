@@ -7,12 +7,12 @@ const SpecieOptions = ['Especie','Human', 'Alien', 'Unknown']
 const StatusOptions = ['Estado','Alive', 'Dead', 'Unknown'];
 
 
-const SearchSection = ({ filterStatus, filterSpecie, filterGender }) => {
+export const SearchSection = ({ filterStatus, filterSpecie, filterGender }) => {
 
     return (
 
         <div className="flex w-full bg-[#03154F] h-40">
-            <div className="flex flex-wrap items-center mx-auto">
+            <div className="flex flex-col md:flex-row items-center mx-auto">
             <Select className="w-auto p-2"
                 defaultValue={{ label: 'Estado', value: 'Empty' }}
                 options={StatusOptions.map(gen => {
@@ -51,8 +51,4 @@ const SearchSection = ({ filterStatus, filterSpecie, filterGender }) => {
         </div>
 
     );
-
-
 }
-
-export default SearchSection

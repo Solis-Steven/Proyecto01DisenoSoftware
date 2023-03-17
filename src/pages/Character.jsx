@@ -1,9 +1,8 @@
-import { useLocation, useNavigate } from "react-router-dom";
-import { Footer } from "../components/Footer";
-import EpisodeTable from "../components/EpisodeTable";
 import { useEffect, useState } from "react";
-import Divider from "../components/Divider";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Footer, Divider } from "../components";
 import { BsHouse, BsArrowRight, BsFlag } from 'react-icons/bs';
+import { EpisodeTable } from "../components/EpisodeTable";
 
 export function Character() {
 
@@ -31,9 +30,6 @@ export function Character() {
                 });
                 const episodes = await Promise.all(episodePromises);
                 setEpisodesData(episodes);
-
-                console.log(episodesData)
-                
             } catch (error) {
                 console.error(error);
             }
@@ -44,7 +40,6 @@ export function Character() {
     }, [character.episode]);
 
     const manageClick = () => {
-        
         navigate('/');
     }
 

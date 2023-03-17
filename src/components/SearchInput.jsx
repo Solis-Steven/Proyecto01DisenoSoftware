@@ -2,7 +2,7 @@ import { useState } from "react";
 import { fetchCharacters } from "../api/fetchCharacters";
 
 
-const SearchInput = ({ setCharacters, filteredData, filterName }) => {
+export const SearchInput = ({ setCharacters, filteredData, filterName }) => {
 
     const [ inputValue, setInputValue ] = useState("");
 
@@ -39,4 +39,3 @@ const SearchInput = ({ setCharacters, filteredData, filterName }) => {
     )
 
 }
-export default SearchInput

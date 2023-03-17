@@ -1,6 +1,6 @@
 import FetchImagen from '../api/FetchImagen';
 
-const EpisodeTable = ({ characters }) => {
+export const CharactersTable = ({ characters }) => {
     
     return (
         <table className="w-full">
@@ -35,5 +35,3 @@ const EpisodeTable = ({ characters }) => {
         </table>
     );
 }
-
-export default EpisodeTable;

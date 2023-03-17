@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Trivia } from "./Trivia";
-import Question from "./Question";
+import { Question } from "./Question";
 
 
-const Quiz = () => {
+export const Quiz = () => {
     const [trivia, setTrivia] = useState(false);
 
     return (
@@ -40,5 +40,3 @@ const Quiz = () => {
         </div>
     );
 };
-
-export default Quiz;

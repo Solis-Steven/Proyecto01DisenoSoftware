@@ -1,4 +1,4 @@
-const Answer = ({
+export const Answer = ({
     answerText,
     index,
     onSelectAnswer,
@@ -22,7 +22,4 @@ const Answer = ({
         <div className="ml-2">{answerText}</div>
       </div>
     );
-  };
-  
-  export default Answer;
-  
+};
