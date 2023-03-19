@@ -2,6 +2,7 @@ import { useContext } from "react";
 
 import { QuizContext } from "../context/QuizContext";
 
+//This component is used to show the results of the quiz and to restart the quiz
 export function Trivia({setTrivia, children}) {
     const [quizState, dispatch] = useContext(QuizContext);
 

@@ -1,7 +1,8 @@
+//This is the footer component for all pages
 export const Footer = () => {
   return (
     <div className="flex flex-col bg-my-color text-white items-center justify-center
-    text-center sm:flex-row gap-10">
+    text-center sm:flex-row gap-10 lg:justify-evenly">
         <div className="py-10 px-10">
             <h1 className="text-3xl">
                 3 BITS

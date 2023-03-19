@@ -1,5 +1,6 @@
-import rick from '../assets/img/rick.png';
+import rick from '../assets/img/rick.svg';
 
+//This is the component that contains the information of the serie
 export const HeaderInfo = () => {
     return (
     <div className="lg:grid lg:grid-cols-2 bg-my-color">

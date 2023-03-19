@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { fetchCharacters } from "../api/fetchCharacters";
 
-
+//This is the component that renders the search input and the submit button
 export const SearchInput = ({ setCharacters, filteredData, filterName }) => {
 
     const [ inputValue, setInputValue ] = useState("");

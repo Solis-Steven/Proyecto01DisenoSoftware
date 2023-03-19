@@ -12,7 +12,7 @@ import { Character } from '../pages/Character';
 import { Episode } from '../pages/Episode';
 import ErrorPage from '../pages/ErrorPage';
 
- 
+//This is the main routes of the application
 export function MyRoutes() {
     const { user } =  UserAuth();
 

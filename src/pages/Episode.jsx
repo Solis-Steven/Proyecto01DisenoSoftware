@@ -44,7 +44,7 @@ export function Episode() {
 
     return (    
         <>
-            <div className="grid grid-cols-2 bg-my-color py-10 px-10">
+            <div className="flex flex-col items-center gap-4 sm:flex-row justify-center bg-my-color py-10 px-10 ">
                 <div className="col-span-1">
                     <h1 className="bg-orange shadow-lg text-orange-500 text-5xl text-center font-bold max-w-sm rounded-lg bg-my-color p-2 w-full dark:bg-neutral-700"
                     >   {episode.episode}</h1>
@@ -57,12 +57,15 @@ export function Episode() {
                     >  {episode.air_date}
                     </h1>
                     <button
-                    className="absolute top-30 right-4 bg-[#521069]  btn-transparent text-white  px-3 mt-4"
+                    className="absolute top-3 right-3 text-white border border-cyan-500 max-w-sm rounded-lg p-1"
                     onClick={handleClick}
                     >
                         Volver
                     </button>
                 </div>
+            </div>
+            <div className="text-center text-white bg-my-color font-bold text-2xl pt-20"
+                >Personajes que aparecen en el capitulo
             </div>
             <div className="overflow-auto bg-my-color pt-8">
                 <CharactersTable

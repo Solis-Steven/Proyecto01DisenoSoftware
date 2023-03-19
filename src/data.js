@@ -1,3 +1,4 @@
+//This file contains the data for the quiz
 const data = 
 [  {    "question": "¿Quién es Morty?",    "incorrectAnswers": ["El abuelo de Rick", "El mejor amigo de Rick", "El villano principal"],
     "correctAnswer": "Nieto de Rick"

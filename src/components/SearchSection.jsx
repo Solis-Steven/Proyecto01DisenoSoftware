@@ -7,6 +7,7 @@ const SpecieOptions = ['Especie','Human', 'Alien', 'Unknown']
 const StatusOptions = ['Estado','Alive', 'Dead', 'Unknown'];
 
 
+//This component renders the selectors for the filters
 export const SearchSection = ({ filterStatus, filterSpecie, filterGender }) => {
 
     return (

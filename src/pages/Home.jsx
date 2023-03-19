@@ -9,7 +9,7 @@ import {
     Pagination
 } from "../components";
 import { fetchCharacters } from "../api/fetchCharacters";
-import mainBanner from "../assets/img/mainbanner.png";
+import mainBanner from "../assets/img/mainbanner.svg";
 import { Filtered } from "../context/FilterContext";
 import { QuizProvider } from "../context/QuizContext";
 
@@ -79,7 +79,7 @@ export function Home() {
                     filterName={filterName} />
 
                 <button
-                    className="absolute top-0 right-0 bg-black rounded-lg btn-transparent text-white text-3xl py-4 px-4 mt-4 mr-4 bg-opacity-50 "
+                    className="absolute top-3 right-3 text-white border border-cyan-500 max-w-sm rounded-lg p-1"
                     style={{ fontFamily: "Oswald, sans-serif" }}
                     onClick={onLogOut}
                 >

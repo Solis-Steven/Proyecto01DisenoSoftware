@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Trivia } from "./Trivia";
 import { Question } from "./Question";
 
-
+//This component is the main component of the quiz, it is responsible for rendering the questions and the answers
 export const Quiz = () => {
     const [trivia, setTrivia] = useState(false);
 
@@ -23,6 +23,7 @@ export const Quiz = () => {
                     <h3 className="px-2 max-w-2xl text-center mb-5 md:text-3xl">
                     Pon  a prueba tus conocimientos sobe la serie de Rick and Morty mediante la siguiente trivia. ¡No esperes más!
                     </h3>
+                    {/* This button is responsible for starting the quiz */}
                     <button 
                         className=" mt-6 text-2xl border-2 p-3 rounded-lg
                         hover:bg-white hover:text-black transition-all easy-linear

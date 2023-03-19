@@ -16,7 +16,7 @@ function FetchImagen({ url }) {
   }, [url]);
 
   return (
-    <div>
+    <div className="flex justify-center">
       {imagen && <img src={imagen} alt="Imagen" />}
     </div>
   );

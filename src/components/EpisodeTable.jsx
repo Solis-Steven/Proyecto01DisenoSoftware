@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
+//This component is used to show the episodes of a character
 export const EpisodeTable = ({ episodes, character }) => {
 
     const navigate = useNavigate();
@@ -23,6 +24,7 @@ export const EpisodeTable = ({ episodes, character }) => {
                 </tr>
             </thead>
             <tbody className="divide-y divide-black">
+                {/* This is the table that shows the episodes of a character */}
                 {episodes.map((episode, index) => (
                     <tr key={index} className= "odd:bg-[#0b0946]">
                         <td className="w-3 p-3 text-sm  text-gray-400 hover:text-white whitespace-nowrap cursor-pointer"

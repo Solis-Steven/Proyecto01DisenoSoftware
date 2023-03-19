@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
+//This component is used to display the information of each character
 export function CharacterCard({idChar, name, image}) {
 
     //advancing to the characters page

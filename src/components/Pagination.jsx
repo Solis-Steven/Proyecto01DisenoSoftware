@@ -1,5 +1,6 @@
 import { Filtered } from "../context/FilterContext";
 
+//This component is responsible for the pagination of the data
 export function Pagination() {
    
     // Filtered data
